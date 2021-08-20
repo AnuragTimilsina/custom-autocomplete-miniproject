@@ -2,8 +2,7 @@
 from flask import Flask, redirect, url_for, render_template, request
 
 # All about trie
-from trie import Trie
-from trienode import TrieNode
+from trie.trie import Trie
 
 #for trie visualization:
 import treevizer

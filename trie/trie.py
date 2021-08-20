@@ -1,4 +1,4 @@
-from trienode import TrieNode
+from trie.trienode import TrieNode
 
 class Trie(object):
 
