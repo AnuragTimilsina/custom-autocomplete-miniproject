@@ -16,16 +16,16 @@ class Trie(object):
         for char in word:
             # If child of similar letter exists
             # Then just move on! 
-            if char in node.child:
-                node = node.child[char]
+            if char in node.children:
+                node = node.children[char]
             # If there's no child that contains that char,
             # Create a new child node 
             else:
                 new_node = TrieNode(char)
-                node.child[char] = new_node
+                node.children[char] = new_node
                 node = new_node
         
-        node.word_end = True
+        node.stop = True
 
     def traverse(self, node, prefix):
         ''' DFS for trie: 
@@ -33,10 +33,10 @@ class Trie(object):
             node: starting node
             prefix: semi_complete word for tracing possible words
         '''
-        if node.word_end:
-            self.output_words.append((prefix + node.char))
-        for c in node.child.values():
-            self.traverse(c, prefix + node.char)
+        if node.stop:
+            self.output_words.append((prefix + node.value))
+        for c in node.children.values():
+            self.traverse(c, prefix + node.value)
 
     def query(self, x):
         '''
@@ -50,8 +50,8 @@ class Trie(object):
 
 
         for char in x:
-            if char in node.child:
-                node = node.child[char]
+            if char in node.children:
+                node = node.children[char]
             else:
                 return[] # If word not found
 

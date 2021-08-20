@@ -1,0 +1,44 @@
+{% extends"base.html" %}
+{% block title %}Query CE2019 contacts{% endblock %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+
+<form action="#" method="post">
+    <h5>Student Query:</h5>
+    <input type="text" name="Find">
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>Query Results:</h2>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Rollno</th>
+        <th scope="col">Phoneno</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    {% for i in contacts%}
+        <tbody>
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2][:10]}}</td>
+            <td>{{i[3]}}</td>
+        </tr>
+        </tbody>
+    {% endfor %}
+  </table>
+
+{% endblock %}
