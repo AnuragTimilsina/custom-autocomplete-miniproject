@@ -69,8 +69,8 @@ def home():
 
 
 @app.route("/about/")
-def results():
-    pass
+def about():
+    return render_template("about.html")
 
 
 @app.route("/query/", methods=["POST", "GET"])

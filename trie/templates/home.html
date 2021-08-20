@@ -1,5 +1,45 @@
 {% extends "base.html" %}
-{% block title %}Home Page{% endblock %}
+{% block title %}
+<h1>Mini project 3rd sem:</h1>
+{% endblock %}
 {% block content %}
-<h1>Test</h1>
+<!-- <h1>Home:</h1> -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{url_for('static', filename='trie.png')}}" class="d-block w-100" alt="trie" width="500px" height="600px">
+        <div class="carousel-caption d-none d-md-block text-dark">
+          <h2>Trie</h2>
+          <h4>This is a custom auto-complete web app made with Trie data structure.</h4>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename='flask.png')}}" class="d-block w-100" alt="flask" width="500px" height="600px">
+        <div class="carousel-caption d-none d-md-block text-dark">
+          <h2>Flask</h2>
+          <h4>This site was made with flask web framework.</h4>
+        </div>
+      </div>
+      <!-- <div class="carousel-item">
+        <img src="{{url_for('static', filename='computer_logo.png')}}" class="d-block w-100" alt="KUCE2019" width="500px" height="700px">
+        <div class="carousel-caption d-none d-md-block text-dark" >
+          <h2>KU CE 2019</h2>
+          <h4>This platform enables the retrieval of contacts of the CE2019 students with just the prefixes.</h4>
+        </div>
+      </div> -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 {% endblock %}

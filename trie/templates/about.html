@@ -2,8 +2,15 @@
 {% block title %}Search results:{% endblock %}
 
 {% block content %}
-<form action="#" method="post">
-    <p>Student Name:</p>
-    <p><input type="text" name="Find"></p>
-</form>
+    <div align="center">
+        <h1>About:</h1>
+        <h6>This is a custom made auto-complete web app made with Trie data structure and flask web framework. 
+            This platform enables the retrieval of contacts of the CE2019 students with just the initials. </h6>
+        <img src="{{url_for('static', filename='name_trie.png')}}" alt="name_trie" align="middle" width="500px" height=500px>
+        <h6>
+            The above picture is the visualization of the trie tree for the top 10 sorted names whose alphabet begins with an "A". 
+        </h6>
+    </div>
+
+
 {% endblock %}
