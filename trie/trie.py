@@ -1,4 +1,6 @@
 from trie.trienode import TrieNode
+#from trienode import TrieNode
+
 
 class Trie(object):
 
@@ -60,3 +62,24 @@ class Trie(object):
 
         #Sort the results and return
         return sorted(self.output_words)
+
+
+    def remove(self, word):
+        prefix = ""
+        node = self.root
+        tmp_word = word
+        for char in word:
+            if char in node.children:
+                prefix += node.children[char].value
+                node = node.children[char]
+                result = self.query(prefix)
+                if len(result) == 1 and word == result[0]:
+                    tmp_word = tmp_word[len(prefix)-1:]
+                    #node.stop = True
+                    for letter in tmp_word:
+                        if letter in node.children:
+                            del node.children[letter]
+            else:
+                return
+
+
